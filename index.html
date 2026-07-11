@@ -506,7 +506,7 @@
       border-bottom: none;
     }
 
-    /* ---------- SKILLS (BEAUTIFIED) ---------- */
+    /* ---------- SKILLS (BEAUTIFIED & PERFECTLY ORGANIZED) ---------- */
     .skills-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -517,7 +517,7 @@
       background: rgba(0, 212, 255, 0.03);
       border: 1px solid rgba(0, 212, 255, 0.08);
       border-radius: 14px;
-      padding: 1rem 1.2rem;
+      padding: 1.1rem 1.2rem;
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
@@ -555,21 +555,22 @@
       text-transform: uppercase;
       letter-spacing: 0.12em;
       color: var(--accent-cyan);
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.5rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
 
     .skill-card h4 i {
-      font-size: 0.7rem;
+      font-size: 0.75rem;
       opacity: 0.9;
+      width: 18px;
     }
 
     .skill-card p {
       font-size: 0.85rem;
       color: var(--text-secondary);
-      line-height: 1.7;
+      line-height: 1.8;
       font-weight: 400;
       position: relative;
       z-index: 1;
@@ -581,21 +582,23 @@
       color: var(--accent-cyan);
       font-size: 0.6rem;
       font-weight: 500;
-      padding: 0.1rem 0.6rem;
+      padding: 0.15rem 0.7rem;
       border-radius: 100px;
       margin-right: 0.3rem;
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.25rem;
       border: 1px solid rgba(0, 212, 255, 0.05);
       font-family: 'Inter', sans-serif;
       letter-spacing: 0.02em;
+      transition: all 0.2s ease;
     }
 
     .skill-card .skill-tag:hover {
       background: rgba(0, 212, 255, 0.12);
       border-color: rgba(0, 212, 255, 0.2);
+      color: #fff;
     }
 
-    /* ---------- CERTIFICATIONS ---------- */
+    /* ---------- CERTIFICATIONS (with glow on hover) ---------- */
     .cert-badge {
       display: inline-flex;
       align-items: center;
@@ -603,14 +606,50 @@
       font-size: 0.85rem;
       color: var(--text-secondary);
       background: rgba(0, 212, 255, 0.03);
-      padding: 0.3rem 0.8rem;
+      padding: 0.4rem 1rem;
       border-radius: 100px;
-      border: 1px solid rgba(0, 212, 255, 0.05);
+      border: 1px solid rgba(0, 212, 255, 0.08);
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      cursor: default;
+      position: relative;
+      font-weight: 500;
     }
 
     .cert-badge i {
       color: var(--accent-cyan);
-      font-size: 0.7rem;
+      font-size: 0.8rem;
+      transition: all 0.4s ease;
+    }
+
+    /* Glow effect on hover */
+    .cert-badge:hover {
+      background: rgba(0, 212, 255, 0.12);
+      border-color: var(--accent-cyan);
+      color: #fff;
+      box-shadow: 
+        0 0 20px rgba(0, 212, 255, 0.25),
+        0 0 40px rgba(0, 212, 255, 0.1),
+        inset 0 0 20px rgba(0, 212, 255, 0.05);
+      transform: translateY(-2px) scale(1.02);
+    }
+
+    .cert-badge:hover i {
+      color: #fff;
+      text-shadow: 0 0 20px rgba(0, 212, 255, 0.8);
+    }
+
+    /* Pulsing glow animation for the icon on hover */
+    .cert-badge:hover i {
+      animation: iconGlow 1.2s ease-in-out infinite;
+    }
+
+    @keyframes iconGlow {
+      0%, 100% { 
+        text-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
+      }
+      50% { 
+        text-shadow: 0 0 25px rgba(0, 212, 255, 1), 0 0 50px rgba(0, 212, 255, 0.4);
+      }
     }
 
     /* ---------- FOOTER ---------- */
@@ -962,7 +1001,7 @@
                 <i class="fas fa-external-link-alt external-icon"></i>
               </a>
             </span>
-            <span class="date">2025</span>
+            <span class="date">Sep 2025 – Jan 2026</span>
           </div>
           <p class="project-desc">
             Cross-market prediction using GNNs to model inter-stock relationships. 
@@ -987,7 +1026,7 @@
                 <i class="fas fa-external-link-alt external-icon"></i>
               </a>
             </span>
-            <span class="date">2025</span>
+            <span class="date">May 2025 – Jul 2025</span>
           </div>
           <p class="project-desc">
             A comprehensive system designed to optimize rainwater harvesting and 
@@ -1030,10 +1069,11 @@
       </div>
     </section>
 
-    <!-- ===== SKILLS (BEAUTIFIED) ===== -->
+    <!-- ===== SKILLS (BEAUTIFIED & PERFECTLY ORGANIZED) ===== -->
     <section>
       <h2 class="section-title"><i class="fas fa-cogs" style="margin-right:0.6rem;"></i> Technical Skills</h2>
       <div class="skills-grid">
+        <!-- Languages -->
         <div class="skill-card">
           <h4><i class="fas fa-code"></i> Languages</h4>
           <p>
@@ -1045,6 +1085,8 @@
             <span class="skill-tag">MySQL</span>
           </p>
         </div>
+
+        <!-- AI / Machine Learning -->
         <div class="skill-card">
           <h4><i class="fas fa-brain"></i> AI / Machine Learning</h4>
           <p>
@@ -1055,6 +1097,8 @@
             <span class="skill-tag">Hyperparameter Tuning</span>
           </p>
         </div>
+
+        <!-- Web & Frameworks -->
         <div class="skill-card">
           <h4><i class="fas fa-globe"></i> Web & Frameworks</h4>
           <p>
@@ -1065,6 +1109,8 @@
             <span class="skill-tag">REST APIs</span>
           </p>
         </div>
+
+        <!-- Tools & Practices -->
         <div class="skill-card">
           <h4><i class="fas fa-tools"></i> Tools & Practices</h4>
           <p>
@@ -1078,8 +1124,10 @@
             <span class="skill-tag">Debugging</span>
           </p>
         </div>
+
+        <!-- Data Visualization & BI -->
         <div class="skill-card">
-          <h4><i class="fas fa-chart-pie"></i> Data Visualization & BI</h4>
+          <h4><i class="fas fa-chart-pie"></i> Data Visualization &amp; BI</h4>
           <p>
             <span class="skill-tag">Power BI</span>
             <span class="skill-tag">Tableau</span>
@@ -1093,7 +1141,7 @@
       </div>
     </section>
 
-    <!-- ===== CERTIFICATIONS ===== -->
+    <!-- ===== CERTIFICATIONS (with glow on hover) ===== -->
     <section>
       <h2 class="section-title"><i class="fas fa-certificate" style="margin-right:0.6rem;"></i> Certifications</h2>
       <div class="card" style="display:flex; flex-wrap:wrap; gap:0.8rem; align-items:center;">
