@@ -506,41 +506,93 @@
       border-bottom: none;
     }
 
-    /* ---------- SKILLS ---------- */
+    /* ---------- SKILLS (BEAUTIFIED) ---------- */
     .skills-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 0.8rem;
+      gap: 1rem;
     }
 
     .skill-card {
-      background: rgba(0, 212, 255, 0.02);
-      border: 1px solid rgba(0, 212, 255, 0.05);
-      border-radius: 12px;
-      padding: 0.9rem 1rem;
+      background: rgba(0, 212, 255, 0.03);
+      border: 1px solid rgba(0, 212, 255, 0.08);
+      border-radius: 14px;
+      padding: 1rem 1.2rem;
       transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(4px);
+    }
+
+    .skill-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 30% 40%, rgba(0, 212, 255, 0.03) 0%, transparent 60%);
+      pointer-events: none;
+      transition: all 0.6s ease;
+    }
+
+    .skill-card:hover::before {
+      transform: scale(1.2);
+      opacity: 0.8;
     }
 
     .skill-card:hover {
-      background: rgba(0, 212, 255, 0.05);
-      border-color: rgba(0, 212, 255, 0.15);
-      transform: translateY(-2px);
+      background: rgba(0, 212, 255, 0.08);
+      border-color: var(--accent-cyan);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0, 212, 255, 0.06);
     }
 
     .skill-card h4 {
       font-family: 'Orbitron', monospace;
-      font-size: 0.55rem;
+      font-size: 0.6rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       color: var(--accent-cyan);
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .skill-card h4 i {
+      font-size: 0.7rem;
+      opacity: 0.9;
     }
 
     .skill-card p {
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       color: var(--text-secondary);
-      line-height: 1.6;
+      line-height: 1.7;
+      font-weight: 400;
+      position: relative;
+      z-index: 1;
+    }
+
+    .skill-card .skill-tag {
+      display: inline-block;
+      background: rgba(0, 212, 255, 0.06);
+      color: var(--accent-cyan);
+      font-size: 0.6rem;
+      font-weight: 500;
+      padding: 0.1rem 0.6rem;
+      border-radius: 100px;
+      margin-right: 0.3rem;
+      margin-bottom: 0.2rem;
+      border: 1px solid rgba(0, 212, 255, 0.05);
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.02em;
+    }
+
+    .skill-card .skill-tag:hover {
+      background: rgba(0, 212, 255, 0.12);
+      border-color: rgba(0, 212, 255, 0.2);
     }
 
     /* ---------- CERTIFICATIONS ---------- */
@@ -674,7 +726,7 @@
       }
 
       .skills-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
       }
 
       .card {
@@ -703,6 +755,10 @@
       .hero-left .tagline {
         font-size: 1.05rem;
         max-width: 650px;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(4, 1fr);
       }
     }
 
@@ -848,7 +904,7 @@
           <a href="https://github.com/rakeshgangaraju10" target="_blank" title="GitHub">
             <i class="fab fa-github"></i>
           </a>
-          <a href="https://www.linkedin.com/in/rakesh-g-995004324" target="_blank" title="LinkedIn">
+          <a href="https://www.linkedin.com/in/rakesh-g-995004324/" target="_blank" title="LinkedIn">
             <i class="fab fa-linkedin-in"></i>
           </a>
         </div>
@@ -974,29 +1030,65 @@
       </div>
     </section>
 
-    <!-- ===== SKILLS ===== -->
+    <!-- ===== SKILLS (BEAUTIFIED) ===== -->
     <section>
       <h2 class="section-title"><i class="fas fa-cogs" style="margin-right:0.6rem;"></i> Technical Skills</h2>
       <div class="skills-grid">
         <div class="skill-card">
           <h4><i class="fas fa-code"></i> Languages</h4>
-          <p>Python, C#, JavaScript, HTML, CSS, MySQL</p>
+          <p>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">C#</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3</span>
+            <span class="skill-tag">MySQL</span>
+          </p>
         </div>
         <div class="skill-card">
           <h4><i class="fas fa-brain"></i> AI / Machine Learning</h4>
-          <p>PyTorch, PyTorch Geometric, Neural Networks, Feature Engineering, Hyperparameter Tuning</p>
+          <p>
+            <span class="skill-tag">PyTorch</span>
+            <span class="skill-tag">PyTorch Geometric</span>
+            <span class="skill-tag">Neural Networks</span>
+            <span class="skill-tag">Feature Engineering</span>
+            <span class="skill-tag">Hyperparameter Tuning</span>
+          </p>
         </div>
         <div class="skill-card">
           <h4><i class="fas fa-globe"></i> Web & Frameworks</h4>
-          <p>.NET, ASP.NET, MVC, Entity Framework, REST APIs</p>
+          <p>
+            <span class="skill-tag">.NET</span>
+            <span class="skill-tag">ASP.NET</span>
+            <span class="skill-tag">MVC</span>
+            <span class="skill-tag">Entity Framework</span>
+            <span class="skill-tag">REST APIs</span>
+          </p>
         </div>
         <div class="skill-card">
           <h4><i class="fas fa-tools"></i> Tools & Practices</h4>
-          <p>Git, GitHub, Google Colab, VS Code, OOP, DSA, SDLC, Debugging</p>
+          <p>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag">Google Colab</span>
+            <span class="skill-tag">VS Code</span>
+            <span class="skill-tag">OOP</span>
+            <span class="skill-tag">DSA</span>
+            <span class="skill-tag">SDLC</span>
+            <span class="skill-tag">Debugging</span>
+          </p>
         </div>
         <div class="skill-card">
           <h4><i class="fas fa-chart-pie"></i> Data Visualization & BI</h4>
-          <p>Power BI, Tableau, Excel, Pandas, NumPy, Matplotlib, Seaborn</p>
+          <p>
+            <span class="skill-tag">Power BI</span>
+            <span class="skill-tag">Tableau</span>
+            <span class="skill-tag">Excel</span>
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">NumPy</span>
+            <span class="skill-tag">Matplotlib</span>
+            <span class="skill-tag">Seaborn</span>
+          </p>
         </div>
       </div>
     </section>
