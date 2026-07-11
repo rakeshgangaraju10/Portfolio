@@ -555,7 +555,7 @@
       text-transform: uppercase;
       letter-spacing: 0.12em;
       color: var(--accent-cyan);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
@@ -567,13 +567,10 @@
       width: 18px;
     }
 
-    .skill-card p {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      line-height: 1.8;
-      font-weight: 400;
-      position: relative;
-      z-index: 1;
+    .skill-card .skill-tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
     }
 
     .skill-card .skill-tag {
@@ -582,10 +579,8 @@
       color: var(--accent-cyan);
       font-size: 0.6rem;
       font-weight: 500;
-      padding: 0.15rem 0.7rem;
+      padding: 0.2rem 0.8rem;
       border-radius: 100px;
-      margin-right: 0.3rem;
-      margin-bottom: 0.25rem;
       border: 1px solid rgba(0, 212, 255, 0.05);
       font-family: 'Inter', sans-serif;
       letter-spacing: 0.02em;
@@ -596,6 +591,7 @@
       background: rgba(0, 212, 255, 0.12);
       border-color: rgba(0, 212, 255, 0.2);
       color: #fff;
+      transform: translateY(-1px);
     }
 
     /* ---------- CERTIFICATIONS (with glow on hover) ---------- */
@@ -1076,44 +1072,44 @@
         <!-- Languages -->
         <div class="skill-card">
           <h4><i class="fas fa-code"></i> Languages</h4>
-          <p>
+          <div class="skill-tag-container">
             <span class="skill-tag">Python</span>
             <span class="skill-tag">C#</span>
             <span class="skill-tag">JavaScript</span>
             <span class="skill-tag">HTML5</span>
             <span class="skill-tag">CSS3</span>
             <span class="skill-tag">MySQL</span>
-          </p>
+          </div>
         </div>
 
         <!-- AI / Machine Learning -->
         <div class="skill-card">
           <h4><i class="fas fa-brain"></i> AI / Machine Learning</h4>
-          <p>
+          <div class="skill-tag-container">
             <span class="skill-tag">PyTorch</span>
             <span class="skill-tag">PyTorch Geometric</span>
             <span class="skill-tag">Neural Networks</span>
             <span class="skill-tag">Feature Engineering</span>
             <span class="skill-tag">Hyperparameter Tuning</span>
-          </p>
+          </div>
         </div>
 
         <!-- Web & Frameworks -->
         <div class="skill-card">
           <h4><i class="fas fa-globe"></i> Web & Frameworks</h4>
-          <p>
+          <div class="skill-tag-container">
             <span class="skill-tag">.NET</span>
             <span class="skill-tag">ASP.NET</span>
             <span class="skill-tag">MVC</span>
             <span class="skill-tag">Entity Framework</span>
             <span class="skill-tag">REST APIs</span>
-          </p>
+          </div>
         </div>
 
         <!-- Tools & Practices -->
         <div class="skill-card">
           <h4><i class="fas fa-tools"></i> Tools & Practices</h4>
-          <p>
+          <div class="skill-tag-container">
             <span class="skill-tag">Git</span>
             <span class="skill-tag">GitHub</span>
             <span class="skill-tag">Google Colab</span>
@@ -1122,13 +1118,13 @@
             <span class="skill-tag">DSA</span>
             <span class="skill-tag">SDLC</span>
             <span class="skill-tag">Debugging</span>
-          </p>
+          </div>
         </div>
 
         <!-- Data Visualization & BI -->
         <div class="skill-card">
           <h4><i class="fas fa-chart-pie"></i> Data Visualization &amp; BI</h4>
-          <p>
+          <div class="skill-tag-container">
             <span class="skill-tag">Power BI</span>
             <span class="skill-tag">Tableau</span>
             <span class="skill-tag">Excel</span>
@@ -1136,7 +1132,7 @@
             <span class="skill-tag">NumPy</span>
             <span class="skill-tag">Matplotlib</span>
             <span class="skill-tag">Seaborn</span>
-          </p>
+          </div>
         </div>
       </div>
     </section>
