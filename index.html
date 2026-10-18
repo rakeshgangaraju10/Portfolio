@@ -436,9 +436,38 @@
 
     .project-title-link i.fa-chart-line,
     .project-title-link i.fa-tint,
-    .project-title-link i.fa-robot {
+    .project-title-link i.fa-robot,
+    .project-title-link i.fa-file-alt {
       color: var(--accent-cyan);
       font-size: 0.9rem;
+    }
+
+    /* Live demo / source links under a project */
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.6rem;
+    }
+
+    .project-links a {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--accent-cyan);
+      text-decoration: none;
+      padding: 0.25rem 0.75rem;
+      border-radius: 100px;
+      border: 1px solid rgba(0, 212, 255, 0.3);
+      transition: background 0.3s;
+    }
+
+    .project-links a:hover {
+      background: rgba(0, 212, 255, 0.1);
+    }
+
+    .project-desc ul {
+      margin: 0.3rem 0 0 1.1rem;
+      padding: 0;
     }
 
     .project-title-link:hover {
@@ -988,6 +1017,43 @@
       <h2 class="section-title"><i class="fas fa-rocket" style="margin-right:0.6rem;"></i> Projects</h2>
 
       <div class="card">
+        <!-- Project: CareerForge – AI Resume-to-Job Matching Platform (live) -->
+        <div class="project-item">
+          <div class="project-header">
+            <span class="name">
+              <a href="https://careerforge-h362.onrender.com" target="_blank" rel="noopener" class="project-title-link" title="Open live site">
+                <i class="fas fa-file-alt"></i> CareerForge – AI Resume-to-Job Matching Platform
+                <i class="fas fa-external-link-alt external-icon"></i>
+              </a>
+            </span>
+            <span class="date">Jul 2026 – Oct 2026</span>
+          </div>
+          <div class="project-desc">
+            Full-stack analytics web app that scores resume-to-job fit with explainable
+            0–100 match scores, matched skills, gaps, evidence, and downloadable reports.
+            <ul>
+              <li>React + TypeScript frontend and Django REST Framework API on PostgreSQL, with server-side validation and structured reporting.</li>
+              <li>Rule-based matching with a 115-skill dictionary and a transparent scoring formula, fully auditable, with no sensitive data sent to external services.</li>
+              <li>Security: safe upload validation, session auth, per-user data isolation, rate limits, and email password reset.</li>
+              <li>254 backend tests (96% coverage), 57 frontend tests, and a Playwright E2E test, all run in GitHub Actions on every push.</li>
+              <li>Deployed on Render with Neon PostgreSQL; Docker setup provided for self-hosting.</li>
+            </ul>
+          </div>
+          <div class="project-tech">
+            <span>React</span>
+            <span>TypeScript</span>
+            <span>Django REST</span>
+            <span>PostgreSQL</span>
+            <span>Docker</span>
+            <span>Playwright</span>
+            <span>GitHub Actions</span>
+          </div>
+          <div class="project-links">
+            <a href="https://careerforge-h362.onrender.com" target="_blank" rel="noopener"><i class="fas fa-globe"></i> Live Demo</a>
+            <a href="https://github.com/rakeshgangaraju10/AI-Intelligence-Resume" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
         <!-- Project 1: Stock Prediction with GNNs (clickable title) -->
         <div class="project-item">
           <div class="project-header">
